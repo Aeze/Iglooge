@@ -3,48 +3,38 @@ using System.Collections;
 
 public class PenguinController : MonoBehaviour
 {
+		public WheelCollider rightfront;
+		public WheelCollider leftfront;
+		public WheelCollider rightback;
+		public WheelCollider leftback;
 
 
-		public float maxSpeed;
-		public float acceleration;
-		public float currentSpeed;
-		public float rotationSpeed;
-	
-		private RaycastHit hit;
-		private Vector3 currentRotation;
+		public float acceleration = 500;
+		public float maxSpeed = 1000;
+		public float maxSteer = 25.0f;
+		public float steer = 0.0f;
+
+
+
+		
 	
 		// Use this for initialization
 		void Start ()
 		{
-				currentSpeed = 0.0f;
+				rigidbody.centerOfMass = new Vector3 (0, -1, 0);
+
 		}
 	
-		void FixedUpdate ()
+		void Update ()
 		{
-				KeepUpright ();
-				MoveForward ();
+				rigidbody.AddForce (-transform.up * 1000);
+				steer = Input.GetAxis ("Horizontal") * maxSteer;
+				rightfront.steerAngle = steer;
+				leftfront.steerAngle = steer;
 
-			
+
+				rigidbody.velocity += (rigidbody.velocity * 0.12f * Time.deltaTime);
+
 		}
-	
-		void KeepUpright ()
-		{
-				Vector3 relativeLeft = (transform.position + new Vector3 (-1, 0, 1));
-				Vector3 relativeRight = (transform.position + new Vector3 (1, 0, 1));
-				Quaternion targetRotation = Quaternion.LookRotation (relativeLeft);
-
-				
-				transform.localRotation = Quaternion.Slerp (transform.localRotation, targetRotation, Time.deltaTime);
-		}
-
-
-
-		void MoveForward ()
-		{
-			
-		}
-	
-
-
 	
 }
