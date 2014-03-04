@@ -1,0 +1,210 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"euler",
+				"eulerAngles	Transform.*"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "using UnityEngine;\nusing System.Collections;\n\npublic class PenguinController : MonoBehaviour {\n\n\n	public float maxSpeed;\n	public float acceleration;\n	public float currentSpeed;\n	\n	private RaycastHit hit;\n	private float desiredSpeed;\n	\n	// Use this for initialization\n	void Start () {\n		currentSpeed = 0.0f;\n	}\n	\n	void FixedUpdate () {\n		KeepUpright();\n		MoveForward();\n		GetInputs();\n	}\n	\n	void KeepUpright () {\n		if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit)) {\n			private Vector3 = Vector3.left \n			transform.up = hit.normal;\n		}\n	}\n	\n	void MoveForward() {\n		desiredSpeed = (transform.rotation.eulerAngles.z / 1);\n\n		currentSpeed = Mathf.Lerp(currentSpeed, desiredSpeed, acceleration * Time.deltaTime);\n				\n		transform.Translate( transform.forward * currentSpeed * Time.deltaTime);\n	}\n	\n	void GetInputs () {\n		\n		if(Input.GetKeyDown(KeyCode.A)) {\n			Debug.Log(\"AAAA\");\n			rigidbody.AddForce(-30,0,0);\n		}\n		if(Input.GetKeyDown(KeyCode.D)) {\n			Debug.Log(\"DDDD\");\n			rigidbody.AddForce(30,0,0);\n			\n		}\n	}\n	\n	\n}\n",
+			"file": "Assets/Scripts/PenguinController.cs",
+			"file_size": 1082,
+			"file_write_time": 130383571197129154,
+			"settings":
+			{
+				"buffer_size": 1061,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/MarcusMobile/Documents/Iglooge/iglooge.sublime-project",
+		"/C/Users/MarcusMobile/Documents/Iglooge/iglooge.sublime-workspace",
+		"/C/Users/MarcusMobile/projects/stpaddys/css/main.css",
+		"/C/Users/MarcusMobile/projects/stpaddys/_config.yml",
+		"/C/Users/MarcusMobile/projects/stpaddys/index.html",
+		"/C/Users/MarcusMobile/projects/stpaddys/_layouts/default.html",
+		"/C/Users/MarcusMobile/projects/stpaddys/CNAME",
+		"/C/Users/MarcusMobile/devbox-omoro/manifests/default.pp",
+		"/C/Users/MarcusMobile/projects/stpaddys/_data/items.yml",
+		"/C/Users/MarcusMobile/devbox-omoro/Vagrantfile"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"iaction"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "Assets/Scripts/PenguinController.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1061,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								544,
+								544
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C#/C#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 135.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "iglooge.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
