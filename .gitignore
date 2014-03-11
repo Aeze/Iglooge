@@ -1,6 +1,7 @@
 /Temp
 /obj
 /library
+/Vendor Assets
 *.csproj
 *.unityproj
 *.sln
