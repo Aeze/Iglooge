@@ -8,7 +8,7 @@ public class RaceManager : MonoBehaviour
 		public bool paused = false;
 		public float timeToStart = 3.0f;	
 		
-		
+		public GameObject[] penguins;
 
 		// Private reference
 		private static RaceManager _instance;
@@ -24,12 +24,13 @@ public class RaceManager : MonoBehaviour
 
 		void Awake ()
 		{
+				penguins = GameObject.FindGameObjectsWithTag ("Penguin");
 			
 		}
 		void Start ()
 		{
-			
-	
+				PauseGame ();
+				Invoke ("UnpauseGame", 3.0f);
 		}
 	
 
@@ -42,12 +43,16 @@ public class RaceManager : MonoBehaviour
 
 		void PauseGame ()
 		{
+				foreach (GameObject penguin in penguins) {
+						penguin.rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+				}
 				
 		}
 
 		void UnpauseGame ()
 		{
-				
-			
+				foreach (GameObject penguin in penguins) {
+						penguin.rigidbody.constraints = RigidbodyConstraints.None;
+				}
 		}
 }
