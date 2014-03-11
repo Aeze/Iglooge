@@ -12,14 +12,11 @@
 	"buffers":
 	[
 		{
-			"contents": "using UnityEngine;\nusing System.Collections;\n\npublic class PenguinController : MonoBehaviour {\n\n\n	public float maxSpeed;\n	public float acceleration;\n	public float currentSpeed;\n	\n	private RaycastHit hit;\n	private float desiredSpeed;\n	\n	// Use this for initialization\n	void Start () {\n		currentSpeed = 0.0f;\n	}\n	\n	void FixedUpdate () {\n		KeepUpright();\n		MoveForward();\n		GetInputs();\n	}\n	\n	void KeepUpright () {\n		if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit)) {\n			private Vector3 = Vector3.left \n			transform.up = hit.normal;\n		}\n	}\n	\n	void MoveForward() {\n		desiredSpeed = (transform.rotation.eulerAngles.z / 1);\n\n		currentSpeed = Mathf.Lerp(currentSpeed, desiredSpeed, acceleration * Time.deltaTime);\n				\n		transform.Translate( transform.forward * currentSpeed * Time.deltaTime);\n	}\n	\n	void GetInputs () {\n		\n		if(Input.GetKeyDown(KeyCode.A)) {\n			Debug.Log(\"AAAA\");\n			rigidbody.AddForce(-30,0,0);\n		}\n		if(Input.GetKeyDown(KeyCode.D)) {\n			Debug.Log(\"DDDD\");\n			rigidbody.AddForce(30,0,0);\n			\n		}\n	}\n	\n	\n}\n",
 			"file": "Assets/Scripts/PenguinController.cs",
-			"file_size": 1082,
-			"file_write_time": 130383571197129154,
 			"settings":
 			{
-				"buffer_size": 1061,
-				"line_ending": "Windows"
+				"buffer_size": 1916,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -104,7 +101,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1061,
+						"buffer_size": 1916,
 						"regions":
 						{
 						},
